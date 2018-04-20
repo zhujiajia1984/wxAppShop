@@ -1,1 +1,23 @@
 /* pages/profile/profile.wxss */
+.authPage {
+  display: flex;
+  flex-direction: column;
+}
+.authPageIcon{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.authPageContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.auth_title{
+  margin-top: 10px;
+  color: #888888;
+}
+.auth_desp{
+  color: #d9d9d9;
+}

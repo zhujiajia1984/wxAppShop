@@ -1,2 +1,17 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class='container'>
+  <view wx:if="{{isAuthed.isUserInfoAuthed=='ok'}}"> 1 </view>
+  <view wx:elif="{{isAuthed.isUserInfoAuthed=='fail'}}" class='authPage'>
+    <view class='authPageIcon'>
+      <icon size='93' type='warn' color="#d9d9d9"></icon>
+    </view>
+    <view class='authPageContent'>
+      <text class='page__title auth_title'>授权失败</text>
+      <text class='page__desc auth_desp'>拒绝授权将无法使用查询订单等功能</text>
+    </view>
+    <view class='page__bd page__bd_spacing'>
+      <button class="weui-btn" type="primary">重新授权</button>
+    </view>
+  </view>
+  <view wx:else> init </view>
+</view>

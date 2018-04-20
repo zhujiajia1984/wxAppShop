@@ -1,18 +1,32 @@
 // pages/profile/profile.js
+//获取应用实例
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    isAuthed:{
+      isUserInfoAuthed: null,
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    // 用户登录
+    app.userLogin((res) => {
+      // 渲染页面
+      // this.setData({ token: token });
+      if (res == "auth fail"){
+        let isAuthed = this.data.isAuthed;
+        isAuthed.isUserInfoAuthed = 'fail';
+        this.setData({ isAuthed: isAuthed });
+      }
+    });
   },
 
   /**
