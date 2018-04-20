@@ -1,6 +1,26 @@
 <!--pages/profile/profile.wxml-->
 <view class='container'>
-  <view wx:if="{{isAuthed.isUserInfoAuthed=='ok'}}"> 1 </view>
+  <view wx:if="{{isAuthed.isUserInfoAuthed=='ok'}}">
+    <view class="weui-cells weui-cells_after-title profile_cell_after">
+      <view class="weui-cell profile_cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="{{userInfo.avatarUrl}}" style="width: 60px; height: 60px; display: block;border-radius:5px;" />
+        </view>
+        <view class="weui-cell__bd profile_bd">
+          <view style="margin-bottom:5px;">{{userInfo.nickName}}</view>
+          <view style="font-size: 13px;color: #888888;">{{userInfo.province}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title profile_cell_after">
+      <view class="weui-cell weui-cell_access profile_cell" hover-class="weui-cell_active" wx:for="{{commonMenus}}" wx:key="id" data-id='{{item.id}}' bindtap='onMenuClick' style="padding-top:14px;padding-bottom:14px;">
+        <view class="weui-cell__hd">
+          <image src="{{item.src}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd profile_bd">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
   <view wx:elif="{{isAuthed.isUserInfoAuthed=='fail'}}" class='authPage'>
     <view class='authPageIcon'>
       <icon size='93' type='warn' color="#d9d9d9"></icon>
@@ -10,8 +30,8 @@
       <text class='page__desc auth_desp'>拒绝授权将无法使用查询订单等功能</text>
     </view>
     <view class='page__bd page__bd_spacing'>
-      <button class="weui-btn" type="primary">重新授权</button>
+      <button class="weui-btn" type="primary" open-type='getUserInfo' bindgetuserinfo='getUserInfo'>重新授权</button>
     </view>
   </view>
-  <view wx:else> init </view>
+  <view wx:else></view>
 </view>

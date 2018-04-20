@@ -21,3 +21,14 @@
 .auth_desp{
   color: #d9d9d9;
 }
+.profile_cell{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.profile_bd{
+  margin-left: 10px;
+}
+.profile_cell_after{
+  margin-top: 10px;
+  position: static;
+}
