@@ -1,6 +1,6 @@
 <!--pages/profile/profile.wxml-->
 <view class='container'>
-  <view wx:if="{{isAuthed.isUserInfoAuthed=='ok'}}">
+  <!-- <view wx:if="{{isAuthed.isUserInfoAuthed=='ok'}}">
     <view class="weui-cells weui-cells_after-title profile_cell_after">
       <view class="weui-cell profile_cell">
         <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
@@ -33,5 +33,5 @@
       <button class="weui-btn" type="primary" open-type='getUserInfo' bindgetuserinfo='getUserInfo'>重新授权</button>
     </view>
   </view>
-  <view wx:else></view>
+  <view wx:else></view> -->
 </view>

@@ -67,23 +67,23 @@ Page({
    */
   onLoad: function (options) {
     // 用户登录
-    wx.showNavigationBarLoading();
-    app.userLogin((res) => {
-      // 渲染页面
-      if (res.type == "auth fail") {
-        // 失败页面
-        let isAuthed = this.data.isAuthed;
-        isAuthed.isUserInfoAuthed = 'fail';
-        this.setData({ isAuthed: isAuthed });
-      } else if (res.type == "success") {
-        // 成功页面
-        let userInfo = wx.getStorageSync('userInfo');
-        let isAuthed = this.data.isAuthed;
-        isAuthed.isUserInfoAuthed = 'ok';
-        this.setData({ isAuthed: isAuthed, userInfo: userInfo});
-      }
-      wx.hideNavigationBarLoading();
-    });
+    // wx.showNavigationBarLoading();
+    // app.userLogin((res) => {
+    //   // 渲染页面
+    //   if (res.type == "auth fail") {
+    //     // 失败页面
+    //     let isAuthed = this.data.isAuthed;
+    //     isAuthed.isUserInfoAuthed = 'fail';
+    //     this.setData({ isAuthed: isAuthed });
+    //   } else if (res.type == "success") {
+    //     // 成功页面
+    //     let userInfo = wx.getStorageSync('userInfo');
+    //     let isAuthed = this.data.isAuthed;
+    //     isAuthed.isUserInfoAuthed = 'ok';
+    //     this.setData({ isAuthed: isAuthed, userInfo: userInfo});
+    //   }
+    //   wx.hideNavigationBarLoading();
+    // });
   },
 
   /**
