@@ -1,1 +1,2 @@
 <!--index.wxml-->
+<button type='primary' bindtap='bindViewTap' style="margin-top:100px;"> 领取优惠券 </button>
